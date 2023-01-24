@@ -1,6 +1,17 @@
 # lists all WiFi and Passwords in your Computer 
 # code by : Saad Anouar
 # be sure you got the code from : https://github.com/anrsaad/Python_WiFi
+import os
+
+def animation():
+    print("""         
+                                               ___   ___  ___
+      __███████ ]▄▄▄▄▄▄▄▄   -->> \\     /\\    /  |   |      | 
+_▄▄▄▄▄█PASSWORDS█▄▄▄▄▄▄_          \\   /  \\  /   |   |---   | 
+█████████████████████████].        \\ /    \\/   _|_  |     _|_ 
+()▲()▲()▲()▲()▲()▲()▲()▲()                  By : [Saad Anouar]
+    
+""")
 
 import subprocess
 def wifi_profiles():
@@ -13,7 +24,13 @@ def wifi_profiles():
             name = line.split(": ")[1]
             wifi.append(name)
     return wifi
-print("\nYour Wifi Password :\n")
+
+os.system("@echo off")
+os.system("color B")
+os.system("cls")
+animation()
+
+print("\nYour Wifi Passwords :\n")
 for name in wifi_profiles():
     data = subprocess.check_output(["netsh", "wlan", "show","profiles","name=", name, "key=clear" ])
     str_data = data.decode("utf-8", errors="backslashreplace")
@@ -24,4 +41,7 @@ for name in wifi_profiles():
             password = line.split(": ")[1]
     
     print(name, ": ", password)
-print("\n\n")
+print("\n")
+
+# build using Pyinstaller, using this code :
+# pyinstaller --ico C:\Users\anrsaad\Desktop\wifi.ico --onefile C:\Users\anrsaad\Desktop\wifi.py
