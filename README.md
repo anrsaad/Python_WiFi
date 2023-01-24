@@ -1,7 +1,7 @@
 # Python_WiFi
 get all wifi and passwords from windows using python
 
-                                                                              ___   ___  ___                                                                          
+                                                                             ___   ___  ___                                                                          
 			       	      __███████ ]▄▄▄▄▄▄▄▄   -->> \\     /\\    /  |   |      |                                                                
 				_▄▄▄▄▄█PASSWORDS█▄▄▄▄▄▄_          \\   /  \\  /   |   |---   |                                                                         
 				█████████████████████████].        \\ /    \\/   _|_  |     _|_                                                                                          
